@@ -1,0 +1,45 @@
+---
+title: "IS2000 Assignment / Getting to Know R"
+author: "Duzgun, Zeynep"
+date: "Spring 2024"
+output:
+  html_document:
+    df_print: paged
+---
+
+## Question 2
+
+This code will load the csv from the url and does not load the text (strings) attributes (columns) as factors. Does not echo. It will show the head of the data, or the first 6 rows.
+
+```{r load data, echo=FALSE}
+
+# Load the data from URL
+df.flights <- read.csv(url("https://s3.us-east-2.amazonaws.com/artificium.us/datasets/FlightsWithAirlines.csv"), stringsAsFactors = F)
+
+# Display
+head(df.flights)
+
+```
+
+## Question 3
+
+The dataset contains `r nrow(df.flights)` observations (rows) and `r ncol(df.flights)` columns. Each row is information about a flight, including departure and departure delay information. The average mean departure delay is `r round(mean(df.flights$dep_delay, na.rm = T))` minutes.  A total of `r sum(df.flights$dep_delay > 60)` flights experienced a delay of more than an hour.
+
+
+## Question 4
+
+This adds a new column 'isNight' to the data frame, checking if the calculated actual departure time using <code>dep_hour</code>, <code>dep_min</code>, and <code>dep_delay</code>, is after 19:00. If so, the value is <code>True</code>, otherwise, it is <code>False</code>. Then, it displays the head.
+
+```{r isNight, echo=FALSE}
+
+# Calculate actual departure time in minutes
+actual_dep_time <- df.flights$dep_hr * 60 + df.flights$dep_min + df.flights$dep_delay
+
+# Create a new column 'isNight' using ifelse
+df.flights$isNight <- ifelse(actual_dep_time >= (19 * 60), TRUE, FALSE)
+
+# Display
+head(df.flights)
+
+```
+
