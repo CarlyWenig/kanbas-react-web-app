@@ -1,5 +1,6 @@
 <html>
   <head>
+    <link rel="stylesheet" href="/libs/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="/Kanbas/styles.css" />
     <link rel="stylesheet" href="/Kanbas/Navigation/index.css" />
@@ -8,99 +9,82 @@
     <link rel="stylesheet" href="/Kanbas/Courses/Modules/index.css" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   </head>
-  <table>
-    <tbody>
-      <tr>
-        <td valign="top">
-          <div class="d-flex">
-            <div class="d-none d-md-block">
-              <ul class="wd-kanbas-navigation">
-                <!-- Copy Kanbas Navigation Here -->
-                <body>
-                  <ul class="wd-kanbas-navigation">
-                    <li><a href="http://northeastern.edu">N</a></li>
-                    <li>
-                      <a href="/Kanbas/Account/Profile/screen.html"
-                        ><i class="fa fa-user-circle-o"></i> Account</a
-                      >
-                    </li>
-                    <li>
-                      <a href="/Kanbas/Dashboard/screen.html">
-                        <i class="fa fa-tachometer"></i> Dashboard</a
-                      >
-                    </li>
-                    <li class="wd-active">
-                      <a href="/Kanbas/Courses/Home/screen.html"
-                        ><i class="fa fa-book"></i> Courses</a
-                      >
-                    </li>
-                    <li>
-                      <a href="#"><i class="fa fa-calendar"></i> Calendar</a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="fa fa-inbox"></i><br />Inbox</a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="fa fa-clock-o"></i> History</a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="fa fa-tv"></i>Studio</a>
-                    </li>
-                    <li>
-                      <a href="#"
-                        ><i class="fa fa-share-square-o"></i>Commons</a
-                      >
-                    </li>
-                    <li>
-                      <a href="#"
-                        ><i class="fa fa-question-circle-o"></i><br />Help</a
-                      >
-                    </li>
-                  </ul>
-                </body>
-              </ul>
-            </div>
-          </div>
-        </td>
-        <td valign="top">
-          <div class="d-none d-md-block">
-            <ul class="wd-navigation">
-              <!-- Copy Course Navigation Here -->
-              <body>
-                <ul class="wd-navigation">
-                  <li>
-                    <a href="/Kanbas/Courses/Home/screen.html">Home</a>
-                  </li>
-                  <li>
-                    <a href="/Kanbas/Courses/Modules/screen.html">Modules</a>
-                  </li>
-                  <li><a href="http://piazza.com">Piazza</a></li>
-                  <li><a href="#">Zoom</a></li>
-                  <li class="wd-active">
-                    <a href="/Kanbas/Courses/Assignments/screen.html"
-                      >Assignments</a
-                    >
-                  </li>
-                  <li><a href="#">Quizzes</a></li>
-                  <li>
-                    <a href="/Kanbas/Courses/Grades/screen.html">Grades</a>
-                  </li>
-                  <li><a href="#">People</a></li>
-                  <li><a href="#">Panopto Video</a></li>
-                  <li><a href="#">Discussions</a></li>
-                  <li><a href="#">Announcements</a></li>
-                  <li><a href="#">Pages</a></li>
-                  <li><a href="#">Files</a></li>
-                  <li><a href="#">Rubrics</a></li>
-                  <li><a href="#">Outcomes</a></li>
-                  <li><a href="#">Collaborations</a></li>
-                  <li><a href="#">Syllabus</a></li>
-                </ul>
-              </body>
-            </ul>
-          </div>
-        </td>
-        <td valign="top">
+  <body>
+    <!-- Implement links to Kanbas and Course Navigation -->
+    <div class="d-flex">
+      <div class="d-none d-md-block">
+        <ul class="wd-kanbas-navigation">
+          <!-- Copy Kanbas Navigation Here -->
+          <body>
+            <li><a href="http://northeastern.edu">N</a></li>
+            <li>
+              <a href="/Kanbas/Account/Profile/screen.html"
+                ><i class="fa fa-user-circle-o"></i> Account</a
+              >
+            </li>
+            <li>
+              <a href="/Kanbas/Dashboard/screen.html">
+                <i class="fa fa-tachometer"></i> Dashboard</a
+              >
+            </li>
+            <li class="wd-active">
+              <a href="/Kanbas/Courses/Home/screen.html"
+                ><i class="fa fa-book"></i> Courses</a
+              >
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-calendar"></i> Calendar</a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-inbox"></i><br />Inbox</a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-clock-o"></i> History</a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-tv"></i>Studio</a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-share-square-o"></i>Commons</a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-question-circle-o"></i><br />Help</a>
+            </li>
+          </body>
+        </ul>
+      </div>
+      <div class="d-none d-md-block">
+        <ul class="wd-navigation">
+          <!-- Copy Course Navigation Here -->
+          <body>
+            <li>
+              <a href="/Kanbas/Courses/Home/screen.html">Home</a>
+            </li>
+            <li>
+              <a href="/Kanbas/Courses/Modules/screen.html">Modules</a>
+            </li>
+            <li><a href="http://piazza.com">Piazza</a></li>
+            <li><a href="#">Zoom</a></li>
+            <li class="wd-active">
+              <a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a>
+            </li>
+            <li><a href="#">Quizzes</a></li>
+            <li><a href="/Kanbas/Courses/Grades/screen.html">Grades</a></li>
+            <li><a href="#">People</a></li>
+            <li><a href="#">Panopto Video</a></li>
+            <li><a href="#">Discussions</a></li>
+            <li><a href="#">Announcements</a></li>
+            <li><a href="#">Pages</a></li>
+            <li><a href="#">Files</a></li>
+            <li><a href="#">Rubrics</a></li>
+            <li><a href="#">Outcomes</a></li>
+            <li><a href="#">Collaborations</a></li>
+            <li><a href="#">Syllabus</a></li>
+          </body>
+        </ul>
+      </div>
+      <div>
+        <html>
           <select>
             <option selected value="Speedgrader">Speedgrader</option>
           </select>
@@ -113,22 +97,26 @@ This is the assignment description.</textarea
           >
           <br />
           <br />
-          <label for="points">Points</label><br />
+          <label for="points">Points</label
+          ><br />
           <input id="points" value="100" /><br />
           <br />
-          <label for="assignment-group">Assignment Group</label><br />
+          <label for="assignment-group">Assignment Group</label
+          ><br />
           <select>
             <option selected value="ASSIGNMENTS">ASSIGNMENTS</option>
           </select>
           <br />
           <br />
-          <label for="display-grade">Display Grade as</label><br />
+          <label for="display-grade">Display Grade as</label
+          ><br />
           <select>
             <option selected value="Percentage">Percentage</option>
           </select>
           <br />
           <br />
-          <label for="submission-type">Submission Type</label><br />
+          <label for="submission-type">Submission Type</label
+          ><br />
           <select>
             <option selected value="Online">Online</option>
           </select>
@@ -143,7 +131,8 @@ This is the assignment description.</textarea
             name="check-entry"
             id="chkbox-text"
           />
-          <label for="chkbox-text">Text Entry</label> <br />
+          <label for="chkbox-text">Text Entry</label>
+          <br />
 
           <input
             type="checkbox"
@@ -151,7 +140,8 @@ This is the assignment description.</textarea
             name="check-entry"
             id="chkbox-web"
           />
-          <label for="chkbox-web">Website URL</label> <br />
+          <label for="chkbox-web">Website URL</label>
+          <br />
 
           <input
             type="checkbox"
@@ -159,7 +149,8 @@ This is the assignment description.</textarea
             name="check-entry"
             id="chkbox-media"
           />
-          <label for="chkbox-media">Media Recordings</label> <br />
+          <label for="chkbox-media">Media Recordings</label>
+          <br />
 
           <input
             type="checkbox"
@@ -167,7 +158,8 @@ This is the assignment description.</textarea
             name="check-entry"
             id="chkbox-annotation"
           />
-          <label for="chkbox-annotation">Student Annotation</label> <br />
+          <label for="chkbox-annotation">Student Annotation</label>
+          <br />
 
           <input
             type="checkbox"
@@ -175,15 +167,19 @@ This is the assignment description.</textarea
             name="check-entry"
             id="chkbox-file"
           />
-          <label for="chkbox-fule">File Uploads</label> <br />
+          <label for="chkbox-fule">File Uploads</label>
+          <br />
 
           <br />
-          <label for="assign">Assign</label><br />
-          <label for="assign-to">Assign to</label><br />
+          <label for="assign">Assign</label
+          ><br />
+          <label for="assign-to">Assign to</label
+          ><br />
           <input id="assignment-to-input" value="Everyone" /><br />
 
           <br />
-          <label for="due">Due</label><br />
+          <label for="due">Due</label
+          ><br />
           <input
             type="date"
             id="text-fields-due-date"
@@ -192,7 +188,8 @@ This is the assignment description.</textarea
 
           <br />
 
-          <label for="available-from">Available from</label><br />
+          <label for="available-from">Available from</label
+          ><br />
           <input
             type="date"
             id="text-fields-available-from"
@@ -201,17 +198,20 @@ This is the assignment description.</textarea
 
           <br />
 
-          <label for="until">Available from</label><br />
+          <label for="until">Available from</label
+          ><br />
           <input type="date" id="text-fields-until" value="2021-01-01" /><br />
+
           <br />
-          <a href="/Kanbas/Courses/Assignments/screen.html"
-            ><button type="button">Cancel</button></a
-          >
-          <a href="/Kanbas/Courses/Assignments/screen.html"
-            ><button type="button">Save</button></a
-          >
-        </td>
-      </tr>
-    </tbody>
-  </table>
+
+          <button type="button">
+            <a href="/Kanbas/Courses/Assignments/screen.html">Cancel<br /> </a>
+          </button>
+          <button type="button">
+            <a href="/Kanbas/Courses/Assignments/screen.html">Save</a>
+          </button>
+        </html>
+      </div>
+    </div>
+  </body>
 </html>
