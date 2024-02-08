@@ -18,7 +18,7 @@
 }
 
 .wd-bar {
-  width: 100%;
+  width: 100vw;
   height: 80px;
   background-color: black;
   color: white;
@@ -88,15 +88,21 @@ a[aria-expanded="false"] .fa-close {
 
   .collapse {
     z-index: 1000;
-    height: 2000px; 
+    /* height: 2000px;  */
     /* margin-top: 80px; */
   }
 
   .white-background {
+    z-index: 1000;
     background-color: white;
   }
 
   .navigation-dropdown {
     color: red;
+  }
+
+
+  .card-body-height {
+      height: 10%;
   }
 
