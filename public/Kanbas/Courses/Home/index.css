@@ -88,9 +88,15 @@ a[aria-expanded="false"] .fa-close {
 
   .collapse {
     z-index: 1000;
+    display: none;
     /* height: 2000px;  */
     /* margin-top: 80px; */
   }
+
+  .collapse:target {
+    display: block;
+}
+
 
   .white-background {
     z-index: 1000;
