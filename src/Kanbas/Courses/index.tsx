@@ -4,6 +4,8 @@ import { HiMiniBars3 } from "react-icons/hi2";
 import "../Courses/index.css";
 import CourseNavigation from "./Navigation";
 import Modules from "./Modules";
+import Home from "./Home";
+import Assignments from "./Assignments";
 function Courses() {
   const { courseId } = useParams();
   const location = useLocation();
@@ -17,6 +19,7 @@ function Courses() {
         <HiMiniBars3 /> {course?.name} 
         {/* change color here */}
         {currentRoute && ` > ${currentRoute}`}
+        <button className="btn btn-secondary float-end student-button">Student View</button>
       </h1>
       <hr />
     
@@ -27,10 +30,10 @@ function Courses() {
           style={{ left: "320px", top: "50px" }} >
           <Routes>
             <Route path="/" element={<Navigate to="Home" />} />
-            <Route path="Home" element={<h1>Home</h1>} />
+            <Route path="Home" element={<Home />} />
             <Route path="Modules" element={<Modules/>} />
             <Route path="Piazza" element={<h1>Piazza</h1>} />
-            <Route path="Assignments" element={<h1>Assignments</h1>} />
+            <Route path="Assignments" element={<Assignments />} />
             <Route path="Assignments/:assignmentId" element={<h1>Assignment Editor</h1>} />
             <Route path="Quizzes" element={<h1>Quizzes</h1>} />
             <Route path="Grades" element={<h1>Grades</h1>} />

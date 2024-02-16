@@ -10,3 +10,7 @@
   color: red;
   --bs-breadcrumb-divider: ">";
 }
+
+.student-button {
+    margin-top: -10px;
+  }
