@@ -1,0 +1,26 @@
+[
+  {
+    "_id": "RS101",
+    "name": "CS1234 React JS",
+    "number": "CS4550.1263.202410",
+    "startDate": "2023-01-10",
+    "endDate": "2023-05-15",
+    "image": "computer.jpg"
+  },
+  {
+    "_id": "RS102",
+    "name": "BI3843 Biology",
+    "number": "BS4560.14565.234567",
+    "startDate": "2023-01-10",
+    "endDate": "2023-05-15",
+    "image": "bio.jpg"
+  },
+  {
+    "_id": "RS103",
+    "name": "EN1456 Writing",
+    "number": "EN4570.14565.234567",
+    "startDate": "2023-01-10",
+    "endDate": "2023-05-15",
+    "image": "flowers.jpg"
+  }
+]

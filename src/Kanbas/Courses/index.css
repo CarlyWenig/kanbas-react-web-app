@@ -1,0 +1,12 @@
+.course-name {
+  color: red;
+  margin-left: 10px; /* Add margin for better spacing */
+  font-size: 1em;
+  margin-top: 20px;
+  font-weight:400;
+}
+
+.custom-breadcrumb {
+  color: red;
+  --bs-breadcrumb-divider: ">";
+}
