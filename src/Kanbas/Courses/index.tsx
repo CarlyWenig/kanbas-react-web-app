@@ -19,10 +19,16 @@ function Courses() {
   const location = useLocation();
   const course = courses.find((course) => course._id === courseId);
   const currentRoute = location.pathname.split("/").pop() || "Home";
+  const renderSmallScreenContent = () => {
+    switch (currentRoute) {
+      case "Home":
+        return <Home />;
+    }
+  };
 
   return (
     <div>
-      {/* <div className="full-screen-div"> */}
+      <div className="full-screen-div">
         <h1>
           <HiMiniBars3 className="bars" />{" "}
           <span className="course-name"> {course?.name}</span>
@@ -62,13 +68,11 @@ function Courses() {
               <Route path="Collaborations" element={<h1>Collaborations</h1>} />
               <Route path="Syllabus" element={<h1>Syllabus</h1>} />
             </Routes>
-          {/* </div> */}
+          </div>
         </div>
       </div>
 
-      {/* <div className="small-screen-div">
-          <Home />
-      </div> */}
+      <div className="small-screen-div">{renderSmallScreenContent()}</div>
     </div>
   );
 }

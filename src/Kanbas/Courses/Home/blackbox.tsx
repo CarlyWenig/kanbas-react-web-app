@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.min.css";
 import { Link } from "react-router-dom";
@@ -34,6 +34,17 @@ import {
 } from "react-icons/fa";
 
 const BlackBox = () => {
+  const [isCollapse1Open, setIsCollapse1Open] = useState(false);
+  const [isCollapse2Open, setIsCollapse2Open] = useState(false);
+
+  const handleCollapse1Toggle = () => {
+    setIsCollapse1Open(!isCollapse1Open);
+  };
+
+  const handleCollapse2Toggle = () => {
+    setIsCollapse2Open(!isCollapse2Open);
+  };
+
   return (
     <div>
       <link rel="stylesheet" href="/libs/bootstrap/bootstrap.min.css" />
@@ -53,11 +64,10 @@ const BlackBox = () => {
       <div className="row wd-bar">
         <div className="col-2" style={{ marginTop: "25px" }}>
           <Link
-            to="#collapseExample2"
-            data-bs-toggle="collapse"
-            role="button"
-            aria-expanded="false"
-            aria-controls="collapseExample2"
+            to="#"
+            onClick={handleCollapse1Toggle}
+            aria-expanded={isCollapse1Open}
+            aria-controls="collapseExample"
           >
             <FaBars style={{ color: "white", fontSize: "20px" }} />
           </Link>
@@ -67,6 +77,7 @@ const BlackBox = () => {
           className="col-8"
           style={{ textAlign: "center", marginTop: "20px" }}
         >
+          {/* fix breadcrumb wrong thing */}
           <h5>CS5610.12631.202410</h5>
           <h6>Modules</h6>
         </div>
@@ -76,23 +87,25 @@ const BlackBox = () => {
           style={{ textAlign: "right", marginTop: "20px" }}
         >
           <Link
-            to="#collapseExample"
-            data-bs-toggle="collapse"
-            role="button"
-            aria-expanded="false"
-            aria-controls="collapseExample"
+            to="#"
+            onClick={handleCollapse2Toggle}
+            aria-expanded={isCollapse2Open}
+            aria-controls="collapseExample2"
           >
             <FaChevronDown className="pull-right chevron-icon" />
             <FaTimes className="pull-right course-item chevron-icon" />
           </Link>
         </div>
 
-        <div className="collapse" id="collapseExample">
-          <div>
+        <div
+          className={isCollapse2Open ? "collapse show" : "collapse"}
+          id="collapseExample2"
+        >
+          <div className="white-background">
             <ul className="chevron-icon.course-nav">
               <li>
                 <Link
-                  to="/Kanbas/Courses/Home/screen.html"
+                  to="/Kanbas/Courses/Home/index.tsx"
                   className="course-item"
                 >
                   <FaHome /> Home
@@ -115,7 +128,7 @@ const BlackBox = () => {
               </li>
               <li>
                 <Link
-                  to="/Kanbas/Courses/Assignments/screen.html"
+                  to="/Kanbas/Courses/Assignments/index.tsx"
                   className="course-item"
                 >
                   <FaPencilRuler /> Assignments
@@ -206,10 +219,13 @@ const BlackBox = () => {
           </div>
         </div>
 
-        <div className="collapse" id="collapseExample2">
-          <div className="card">
-            <div className="card-body">
-              <div className="nav-item">
+        <div
+          className={isCollapse1Open ? "collapse show" : "collapse"}
+          id="collapseExample"
+        >
+          <div className="white-background">
+            <ul>
+              <li>
                 <Link
                   to="/Kanbas/Account/Profile/screen.html"
                   className="text-danger"
@@ -217,27 +233,27 @@ const BlackBox = () => {
                 >
                   <FaUserCircle /> Account
                 </Link>
-              </div>
-              <div className="nav-item">
+              </li>
+              <li>
                 <Link
-                  to="/Kanbas/Dashboard/screen.html"
+                  to="/Kanbas/Dashboard/index.tsx"
                   className="text-danger"
                   style={{ textDecoration: "none" }}
                 >
                   <FaTachometerAlt /> Dashboard
                 </Link>
-              </div>
-              <div className="nav-item">
+              </li>
+              <li>
                 <Link
-                  to="/Kanbas/Courses/Home/screen.html"
+                  to="/Kanbas/Courses/Home/index.tsx"
                   className="text-danger"
                   style={{ textDecoration: "none" }}
                 >
                   <FaBook /> Courses&nbsp;
                   <FaChevronRight />
                 </Link>
-              </div>
-              <div className="nav-item">
+              </li>
+              <li>
                 <Link
                   to="#"
                   className="text-danger"
@@ -245,8 +261,8 @@ const BlackBox = () => {
                 >
                   <FaCalendar /> Calendar
                 </Link>
-              </div>
-              <div className="nav-item">
+              </li>
+              <li>
                 <Link
                   to="#"
                   className="text-danger"
@@ -254,8 +270,8 @@ const BlackBox = () => {
                 >
                   <FaInbox /> Inbox
                 </Link>
-              </div>
-              <div className="nav-item">
+              </li>
+              <li>
                 <Link
                   to="#"
                   className="text-danger"
@@ -263,8 +279,8 @@ const BlackBox = () => {
                 >
                   <FaClock /> History
                 </Link>
-              </div>
-              <div className="nav-item">
+              </li>
+              <li>
                 <Link
                   to="#"
                   className="text-danger"
@@ -272,8 +288,8 @@ const BlackBox = () => {
                 >
                   <FaTv /> Studio
                 </Link>
-              </div>
-              <div className="nav-item">
+              </li>
+              <li>
                 <Link
                   to="#"
                   className="text-danger"
@@ -281,8 +297,8 @@ const BlackBox = () => {
                 >
                   <FaShareSquare /> Commons
                 </Link>
-              </div>
-              <div className="nav-item">
+              </li>
+              <li>
                 <Link
                   to="#"
                   className="text-danger"
@@ -290,8 +306,8 @@ const BlackBox = () => {
                 >
                   <FaQuestionCircle /> Help
                 </Link>
-              </div>
-            </div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

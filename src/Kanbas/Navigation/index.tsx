@@ -27,6 +27,7 @@ function KanbasNavigation() {
   const { pathname } = useLocation();
   return (
     <div>
+      <div className="full-screen-div">
         <ul className="wd-kanbas-navigation">
           {links.map((link, index) => (
             <li
@@ -40,6 +41,8 @@ function KanbasNavigation() {
             </li>
           ))}
         </ul>
+      </div>
+      <div className="small-screen-div">{/* nothing? */}</div>
     </div>
   );
 }

@@ -16,60 +16,62 @@ function Assignments() {
   );
   return (
     <>
-      {/* Add buttons and other fields here  */}
-      <input
-        className="custom-button"
-        id="text-fields-search-assignment"
-        placeholder="Search for Assignments"
-      />
-      <button className="custom-button">Group</button>
-      <button className="custom-button">Assignment</button>
-      <select className="custom-button">
-        <option value="Edit Assignment Dates">Edit Assignment Dates</option>
-      </select>
-      <hr />
+      <div className="assignment-container">
+        {/* Add buttons and other fields here  */}
+        <input
+          className="custom-button"
+          id="text-fields-search-assignment"
+          placeholder="Search for Assignments"
+        />
+        <button className="custom-button">Group</button>
+        <button className="custom-button">Assignment</button>
+        <select className="custom-button">
+          <option value="Edit Assignment Dates">Edit Assignment Dates</option>
+        </select>
+        <hr />
 
-      <ul className="list-group wd-modules">
-        <li className="list-group-item">
-          <div>
-            <FaEllipsisV className="me-2" /> ASSIGNMENTS
-            <span className="float-end">
-              <FaCheckCircle className="text-success" />
-              <FaPlusCircle className="ms-2" />
-              <FaEllipsisV className="ms-2" />
-            </span>
-          </div>
-          <ul className="list-group">
-            {assignmentList.map((assignment) => (
-              <li className="list-group-item">
-                <FaEllipsisV className="me-2" />
-                <span className="green-file-icon">
-                  <FaFileAlt className="me-2" />
-                </span>
-                <Link
-                  to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
-                >
-                  {assignment.title}
-                </Link>
-                <span className="float-end">
-                  <FaCheckCircle className="text-success" />
-                  <FaEllipsisV className="ms-2" />
-                </span>
-                <div>
-                  <li className="text-secondary list-group due-date">
-                    {assignment.modules}
-                    {" | "}
-                    Due Date: {assignment.dueDate}
-                    {" | "}
-                    {assignment.points}
-                    {" pts"}
-                  </li>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </li>
-      </ul>
+        <ul className="list-group wd-modules">
+          <li className="list-group-item">
+            <div>
+              <FaEllipsisV className="me-2" /> ASSIGNMENTS
+              <span className="float-end">
+                <FaCheckCircle className="text-success" />
+                <FaPlusCircle className="ms-2" />
+                <FaEllipsisV className="ms-2" />
+              </span>
+            </div>
+            <ul className="list-group">
+              {assignmentList.map((assignment) => (
+                <li className="list-group-item">
+                  <FaEllipsisV className="me-2" />
+                  <span className="green-file-icon">
+                    <FaFileAlt className="me-2" />
+                  </span>
+                  <Link
+                    to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
+                  >
+                    {assignment.title}
+                  </Link>
+                  <span className="float-end">
+                    <FaCheckCircle className="text-success" />
+                    <FaEllipsisV className="ms-2" />
+                  </span>
+                  <div>
+                    <li className="text-secondary list-group due-date">
+                      {assignment.modules}
+                      {" | "}
+                      Due Date: {assignment.dueDate}
+                      {" | "}
+                      {assignment.points}
+                      {" pts"}
+                    </li>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </li>
+        </ul>
+      </div>
     </>
   );
 }
