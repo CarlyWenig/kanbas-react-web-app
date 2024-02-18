@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import "./index.css";
+import '../../../../src/Kanbas/Courses/Modules/index.css';
 import { modules } from "../../Database";
 import { FaEllipsisV, FaCheckCircle, FaPlusCircle, FaPlus } from "react-icons/fa";
 import { useParams } from "react-router";
+import "../Modules/index.css";
+
 function ModuleList() {
   const { courseId } = useParams();
   const modulesList = modules.filter((module) => module.course === courseId);
@@ -10,10 +12,10 @@ function ModuleList() {
   return (
     <>
        <div className="d-flex justify-content-end modules-container">
-        <button type="button" className="custom-button">
+        <button className="custom-button">
           Collapse All
         </button>
-        <button type="button" className="custom-button">
+        <button className="custom-button">
           View Progress
         </button>
         <select className="custom-button">
@@ -21,16 +23,16 @@ function ModuleList() {
             Publish All
           </option>
         </select>
-        <button type="button" className="mod-button">
+        <button className="mod-button">
           <FaPlus /> Module
         </button>
-        <button type="button" className="elp-button">
+        <button className="elp-button">
           <FaEllipsisV className="ms-2" />
         </button>
       </div>
-      <hr />
+      {/* <hr /> */}
 
-      
+
       <ul className="list-group wd-modules">
         {modulesList.map((module) => (
           <li

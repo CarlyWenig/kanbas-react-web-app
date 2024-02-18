@@ -1,9 +1,21 @@
 .course-name {
   color: red;
-  margin-left: 10px; /* Add margin for better spacing */
-  font-size: 1em;
-  margin-top: 20px;
+  margin-left: 3px; /* Add margin for better spacing */
+  font-size: 0.45em;
+  /* margin-top: 20px; */
   font-weight:400;
+}
+
+.bars {
+    color: red;
+    font-size: 0.5em;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.route {
+    color: grey;
+    font-size: 0.45em;
 }
 
 .custom-breadcrumb {
@@ -12,6 +24,6 @@
 }
 
 .student-button {
-    margin-top: -10px;
+    margin-top: 15px;
     margin-right: 10px;
   }

@@ -14,7 +14,7 @@ function Status() {
   return (
     <div>
       <br />
-      <h1 style={{ fontWeight: "normal" }}>Course Status</h1>
+      <h2 style={{ fontWeight: "normal" }}>Course Status</h2>
       <button type="button" className="unpub-button">
         <FaBan /> Unpublish
       </button>

@@ -13,7 +13,6 @@ function CourseNavigation() {
     "Discussions",
     "Announcements",
     "Pages",
-    "Pages",
     "Files",
     "Rubrics",
     "Outcomes",
