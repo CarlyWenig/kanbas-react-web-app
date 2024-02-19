@@ -42,7 +42,7 @@ function KanbasNavigation() {
           ))}
         </ul>
       </div>
-      <div className="small-screen-div">{/* nothing? */}</div>
+      <div className="small-screen-div">{/* do nothing */}</div>
     </div>
   );
 }
