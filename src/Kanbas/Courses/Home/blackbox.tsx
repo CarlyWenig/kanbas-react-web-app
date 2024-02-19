@@ -6,7 +6,6 @@ import { Link, useParams } from "react-router-dom";
 import {
   FaUserCircle,
   FaTachometerAlt,
-  FaChevronDown,
   FaTimes,
   FaBars,
   FaHome,
@@ -32,6 +31,7 @@ import {
   FaTv,
   FaShareSquare,
   FaQuestionCircle,
+  FaEyeSlash,
 } from "react-icons/fa";
 
 const BlackBox = () => {
@@ -183,49 +183,49 @@ const BlackBox = () => {
               <li>
                 <Link to="#" className="course-item">
                   <FaComments /> Discussions
-                  <i className="fa fa-eye-slash wd-indented"></i>
+                  <FaEyeSlash/>
                 </Link>
               </li>
               <li>
                 <Link to="#" className="course-item">
                   <FaBullhorn /> Announcements
-                  <i className="fa fa-eye-slash wd-indented"></i>
+                  <FaEyeSlash/>
                 </Link>
               </li>
               <li>
                 <Link to="#" className="course-item">
                   <FaFile /> Pages
-                  <i className="fa fa-eye-slash wd-indented"></i>
+                  <FaEyeSlash/>
                 </Link>
               </li>
               <li>
                 <Link to="#" className="course-item">
                   <FaFolder /> Files
-                  <i className="fa fa-eye-slash wd-indented"></i>
+                  <FaEyeSlash/>
                 </Link>
               </li>
               <li>
                 <Link to="#" className="course-item">
                   <FaListAlt /> Rubrics
-                  <i className="fa fa-eye-slash wd-indented"></i>
+                  <FaEyeSlash/>
                 </Link>
               </li>
               <li>
                 <Link to="#" className="course-item">
                   <FaBullseye /> Outcomes
-                  <i className="fa fa-eye-slash wd-indented"></i>
+                  <FaEyeSlash/>
                 </Link>
               </li>
               <li>
                 <Link to="#" className="course-item">
                   <FaCircle /> Collaborations
-                  <i className="fa fa-eye-slash wd-indented"></i>
+                  <FaEyeSlash/>
                 </Link>
               </li>
               <li>
                 <Link to="#" className="course-item">
                   <FaFile /> Syllabus
-                  <i className="fa fa-eye-slash wd-indented"></i>
+                  <FaEyeSlash/>
                 </Link>
               </li>
               <li>
