@@ -44,16 +44,15 @@ const BlackBox = () => {
   const handleCollapse1Toggle = () => {
     setIsCollapse1Open(!isCollapse1Open);
     if (isCollapse2Open) {
-        setIsCollapse2Open(false);
-        setIsExpanded(!isExpanded);
-      }
-    
+      setIsCollapse2Open(false);
+      setIsExpanded(!isExpanded);
+    }
   };
 
   const handleCollapse2Toggle = () => {
     setIsCollapse2Open(!isCollapse2Open);
-    if(isCollapse1Open) {
-        setIsCollapse1Open(false);
+    if (isCollapse1Open) {
+      setIsCollapse1Open(false);
     }
   };
 
@@ -128,14 +127,17 @@ const BlackBox = () => {
             <ul className="chevron-icon.course-nav">
               <li>
                 <Link
-                  to="src/Kanbas/Courses/Home/index.tsx"
+                  to={`../Courses/${courseId}`}
                   className="course-item"
                 >
                   <FaHome /> Home
                 </Link>
               </li>
               <li>
-                <Link to="src/Kanbas/Courses/Modules/index.tsx" className="course-item">
+                <Link
+                  to={`../Courses/${courseId}/Modules`}
+                  className="course-item"
+                >
                   <FaSitemap /> Modules
                 </Link>
               </li>
@@ -151,7 +153,7 @@ const BlackBox = () => {
               </li>
               <li>
                 <Link
-                  to="src/Kanbas/Courses/Assignments/index.tsx"
+                  to={`../Courses/${courseId}/Assignments`}
                   className="course-item"
                 >
                   <FaPencilRuler /> Assignments
@@ -164,7 +166,7 @@ const BlackBox = () => {
               </li>
               <li>
                 <Link
-                  to="/Kanbas/Courses/Grades/screen.html"
+                  to="#"
                   className="course-item"
                 >
                   <FaCheckSquare /> Grades
@@ -183,49 +185,49 @@ const BlackBox = () => {
               <li>
                 <Link to="#" className="course-item">
                   <FaComments /> Discussions
-                  <FaEyeSlash/>
+                  <FaEyeSlash />
                 </Link>
               </li>
               <li>
                 <Link to="#" className="course-item">
                   <FaBullhorn /> Announcements
-                  <FaEyeSlash/>
+                  <FaEyeSlash />
                 </Link>
               </li>
               <li>
                 <Link to="#" className="course-item">
                   <FaFile /> Pages
-                  <FaEyeSlash/>
+                  <FaEyeSlash />
                 </Link>
               </li>
               <li>
                 <Link to="#" className="course-item">
                   <FaFolder /> Files
-                  <FaEyeSlash/>
+                  <FaEyeSlash />
                 </Link>
               </li>
               <li>
                 <Link to="#" className="course-item">
                   <FaListAlt /> Rubrics
-                  <FaEyeSlash/>
+                  <FaEyeSlash />
                 </Link>
               </li>
               <li>
                 <Link to="#" className="course-item">
                   <FaBullseye /> Outcomes
-                  <FaEyeSlash/>
+                  <FaEyeSlash />
                 </Link>
               </li>
               <li>
                 <Link to="#" className="course-item">
                   <FaCircle /> Collaborations
-                  <FaEyeSlash/>
+                  <FaEyeSlash />
                 </Link>
               </li>
               <li>
                 <Link to="#" className="course-item">
                   <FaFile /> Syllabus
-                  <FaEyeSlash/>
+                  <FaEyeSlash />
                 </Link>
               </li>
               <li>
@@ -249,8 +251,8 @@ const BlackBox = () => {
           <div className="white-background ">
             <ul>
               <li>
-                <Link 
-                  to="/Kanbas/#/Kanbas/Account"
+                <Link
+                  to="/Kanbas/Account"
                   className="text-danger"
                   style={{ textDecoration: "none" }}
                 >
@@ -270,7 +272,7 @@ const BlackBox = () => {
               <br />
               <li>
                 <Link
-                  to="/Kanbas/#/Kanbas/Courses"
+                  to="/Kanbas/Courses"
                   className="text-danger"
                   style={{ textDecoration: "none" }}
                 >
