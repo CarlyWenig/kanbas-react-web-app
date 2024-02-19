@@ -95,6 +95,7 @@ a[aria-expanded="false"] .FaTimes {
   z-index: 1000;
   background-color: white;
   height: 830px;
+  width: 100%;
 }
 
 .navigation-dropdown {
@@ -102,5 +103,5 @@ a[aria-expanded="false"] .FaTimes {
 }
 
 .card-body-height {
-  height: 10%;
+  margin-bottom: 10px;
 }

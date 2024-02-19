@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.min.css";
-import { Link } from "react-router-dom";
+import { courses } from "../../Database";
+import { Link, useParams } from "react-router-dom";
 import {
   FaUserCircle,
   FaTachometerAlt,
@@ -34,15 +35,35 @@ import {
 } from "react-icons/fa";
 
 const BlackBox = () => {
+  const { courseId } = useParams();
+  const course = courses.find((course) => course._id === courseId);
   const [isCollapse1Open, setIsCollapse1Open] = useState(false);
   const [isCollapse2Open, setIsCollapse2Open] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const handleCollapse1Toggle = () => {
     setIsCollapse1Open(!isCollapse1Open);
+    if (isCollapse2Open) {
+        setIsCollapse2Open(false);
+        setIsExpanded(!isExpanded);
+      }
+    
   };
 
   const handleCollapse2Toggle = () => {
     setIsCollapse2Open(!isCollapse2Open);
+    if(isCollapse1Open) {
+        setIsCollapse1Open(false);
+    }
+  };
+
+  const handleToggle = () => {
+    setIsExpanded(!isExpanded);
+  };
+
+  const handleCollapseAndToggle = () => {
+    handleCollapse2Toggle();
+    handleToggle();
   };
 
   return (
@@ -77,8 +98,7 @@ const BlackBox = () => {
           className="col-8"
           style={{ textAlign: "center", marginTop: "20px" }}
         >
-          {/* fix breadcrumb wrong thing */}
-          <h5>CS5610.12631.202410</h5>
+          <h5>{course?.number}</h5>
           <h6>Modules</h6>
         </div>
 
@@ -88,12 +108,15 @@ const BlackBox = () => {
         >
           <Link
             to="#"
-            onClick={handleCollapse2Toggle}
+            onClick={handleCollapseAndToggle}
             aria-expanded={isCollapse2Open}
             aria-controls="collapseExample2"
           >
-            <FaChevronDown className="pull-right chevron-icon" />
-            <FaTimes className="pull-right course-item chevron-icon" />
+            {isExpanded ? (
+              <FaTimes className="pull-right chevron-icon" />
+            ) : (
+              <FaChevronRight className="pull-right chevron-icon" />
+            )}
           </Link>
         </div>
 
@@ -105,14 +128,14 @@ const BlackBox = () => {
             <ul className="chevron-icon.course-nav">
               <li>
                 <Link
-                  to="/Kanbas/Courses/Home/index.tsx"
+                  to="src/Kanbas/Courses/Home/index.tsx"
                   className="course-item"
                 >
                   <FaHome /> Home
                 </Link>
               </li>
               <li>
-                <Link to="#" className="course-item">
+                <Link to="src/Kanbas/Courses/Modules/index.tsx" className="course-item">
                   <FaSitemap /> Modules
                 </Link>
               </li>
@@ -128,7 +151,7 @@ const BlackBox = () => {
               </li>
               <li>
                 <Link
-                  to="/Kanbas/Courses/Assignments/index.tsx"
+                  to="src/Kanbas/Courses/Assignments/index.tsx"
                   className="course-item"
                 >
                   <FaPencilRuler /> Assignments
@@ -223,29 +246,31 @@ const BlackBox = () => {
           className={isCollapse1Open ? "collapse show" : "collapse"}
           id="collapseExample"
         >
-          <div className="white-background">
+          <div className="white-background ">
             <ul>
               <li>
-                <Link
-                  to="/Kanbas/Account/Profile/screen.html"
+                <Link 
+                  to="/Kanbas/#/Kanbas/Account"
                   className="text-danger"
                   style={{ textDecoration: "none" }}
                 >
                   <FaUserCircle /> Account
                 </Link>
               </li>
+              <br />
               <li>
                 <Link
-                  to="/Kanbas/Dashboard/index.tsx"
+                  to="/Kanbas/#/Kanbas/Dashboard/index.tsx"
                   className="text-danger"
                   style={{ textDecoration: "none" }}
                 >
                   <FaTachometerAlt /> Dashboard
                 </Link>
               </li>
+              <br />
               <li>
                 <Link
-                  to="/Kanbas/Courses/Home/index.tsx"
+                  to="/Kanbas/#/Kanbas/Courses"
                   className="text-danger"
                   style={{ textDecoration: "none" }}
                 >
@@ -253,6 +278,7 @@ const BlackBox = () => {
                   <FaChevronRight />
                 </Link>
               </li>
+              <br />
               <li>
                 <Link
                   to="#"
@@ -262,6 +288,7 @@ const BlackBox = () => {
                   <FaCalendar /> Calendar
                 </Link>
               </li>
+              <br />
               <li>
                 <Link
                   to="#"
@@ -271,6 +298,7 @@ const BlackBox = () => {
                   <FaInbox /> Inbox
                 </Link>
               </li>
+              <br />
               <li>
                 <Link
                   to="#"
@@ -280,6 +308,7 @@ const BlackBox = () => {
                   <FaClock /> History
                 </Link>
               </li>
+              <br />
               <li>
                 <Link
                   to="#"
@@ -289,6 +318,7 @@ const BlackBox = () => {
                   <FaTv /> Studio
                 </Link>
               </li>
+              <br />
               <li>
                 <Link
                   to="#"
@@ -298,6 +328,7 @@ const BlackBox = () => {
                   <FaShareSquare /> Commons
                 </Link>
               </li>
+              <br />
               <li>
                 <Link
                   to="#"
@@ -307,6 +338,7 @@ const BlackBox = () => {
                   <FaQuestionCircle /> Help
                 </Link>
               </li>
+              <br />
             </ul>
           </div>
         </div>
