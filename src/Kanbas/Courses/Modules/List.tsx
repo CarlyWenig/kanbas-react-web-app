@@ -30,7 +30,7 @@ function ModuleList() {
           <FaEllipsisV className="ms-2" />
         </button>
       </div>
-      {/* <hr /> */}
+      <hr />
 
 
       <ul className="list-group wd-modules">
