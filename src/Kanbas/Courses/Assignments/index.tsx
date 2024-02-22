@@ -1,8 +1,10 @@
 import React from "react";
 import {
   FaCheckCircle,
+  FaChevronDown,
   FaEllipsisV,
   FaFileAlt,
+  FaPlus,
   FaPlusCircle,
 } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
@@ -18,25 +20,36 @@ function Assignments() {
     <>
       <div className="assignment-container">
         {/* Add buttons and other fields here  */}
-        <input
-          className="custom-button"
-          id="text-fields-search-assignment"
-          placeholder="Search for Assignments"
-        />
-        <button className="custom-button">Group</button>
-        <button className="custom-button">Assignment</button>
-        <select className="custom-button">
-          <option value="Edit Assignment Dates">Edit Assignment Dates</option>
-        </select>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <input
+            className="custom-button"
+            id="text-fields-search-assignment"
+            placeholder="Search for Assignments"
+          />
+          <div style={{ marginLeft: "auto" }}>
+            <button className="custom-button">
+              <FaPlus /> Group
+            </button>
+            <button className="assignment-button">
+              <FaPlus /> Assignment
+            </button>
+            <button className="elp-button">
+              <FaEllipsisV className="ms-2" />
+            </button>
+          </div>
+        </div>
+
         <hr />
 
         <ul className="list-group wd-modules">
           <li className="list-group-item">
             <div>
-              <FaEllipsisV className="me-2" /> ASSIGNMENTS
+              <FaEllipsisV className="me-2" />
+              <FaChevronDown className="me-2" />
+              ASSIGNMENTS
               <span className="float-end">
-                <FaCheckCircle className="text-success" />
-                <FaPlusCircle className="ms-2" />
+                40% of Total
+                <FaPlus className="ms-2" />
                 <FaEllipsisV className="ms-2" />
               </span>
             </div>

@@ -9,7 +9,6 @@ function CourseNavigation() {
     "Quizzes",
     "Grades",
     "People",
-    "Panopto Video",
     "Discussions",
     "Announcements",
     "Pages",
