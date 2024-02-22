@@ -14,6 +14,7 @@ import CourseNavigation from "./Navigation";
 import Modules from "./Modules";
 import Home from "./Home";
 import Assignments from "./Assignments";
+import { FaGlasses } from "react-icons/fa";
 function Courses() {
   const { courseId } = useParams();
   const location = useLocation();
@@ -34,7 +35,7 @@ function Courses() {
           <span className="course-name"> {course?.name}</span>
           <span className="route">{currentRoute && ` > ${currentRoute}`}</span>
           <button className="btn btn-secondary float-end student-button">
-            Student View
+            <FaGlasses /> Student View
           </button>
         </h1>
         <hr />
