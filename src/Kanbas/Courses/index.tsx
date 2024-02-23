@@ -15,15 +15,36 @@ import Modules from "./Modules";
 import Home from "./Home";
 import Assignments from "./Assignments";
 import { FaGlasses } from "react-icons/fa";
+import { useEffect, useState } from "react";
 function Courses() {
   const { courseId } = useParams();
   const location = useLocation();
   const course = courses.find((course) => course._id === courseId);
   const currentRoute = location.pathname.split("/").pop() || "Home";
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const renderSmallScreenContent = () => {
-    switch (currentRoute) {
-      case "Home":
-        return <Home />;
+    if (isSmallScreen) {
+      switch (currentRoute) {
+        case "Home":
+          return <Home />;
+        default:
+          return null;
+      }
+    } else {
+      return null;
     }
   };
 
