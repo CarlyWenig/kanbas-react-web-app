@@ -7,25 +7,39 @@ import Highlight from "./Hightlight";
 import Add from "./Add";
 import TodoItem from "./todos/TodoItem";
 import TodoList from "./todos/TodoList";
+import { useSelector } from "react-redux";
+import { LabState } from "../store";
 
 function Assignment3() {
- return (
-   <div>
-     <h1>Assignment 3</h1>
-     <TodoList/>
-     <TodoItem/>
-     <Add a={3} b={4} />
-     <br />
-     <Highlight>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipitratione eaque illo minus cum, saepe totam
-        vel nihil repellat nemo explicabo excepturi consectetur. Modi omnis minus sequi maiores, provident voluptates.
-     </Highlight>
-     <ConditionalOutput/>
-     <Styles/>
-     <Classes/>
-     <PathParameters/>
-     <JavaScript/>
-   </div>
-);}
+  const { todos } = useSelector((state: LabState) => state.todosReducer);
 
-export default Assignment3
+  return (
+    <div>
+      <h1>Assignment 3</h1>
+      <ul className="list-group">
+        {todos.map((todo) => (
+          <li className="list-group-item" key={todo.id}>
+            {todo.title}
+          </li>
+        ))}
+      </ul>
+      <TodoList />
+      <TodoItem />
+      <Add a={3} b={4} />
+      <br />
+      <Highlight>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipitratione
+        eaque illo minus cum, saepe totam vel nihil repellat nemo explicabo
+        excepturi consectetur. Modi omnis minus sequi maiores, provident
+        voluptates.
+      </Highlight>
+      <ConditionalOutput />
+      <Styles />
+      <Classes />
+      <PathParameters />
+      <JavaScript />
+    </div>
+  );
+}
+
+export default Assignment3;
