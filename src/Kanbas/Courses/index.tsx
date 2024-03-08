@@ -16,7 +16,7 @@ import Home from "./Home";
 import Assignments from "./Assignments";
 import { FaGlasses } from "react-icons/fa";
 import { useEffect, useState } from "react";
-function Courses() {
+function Courses({ courses }: { courses: any[]; }) {
   const { courseId } = useParams();
   const location = useLocation();
   const course = courses.find((course) => course._id === courseId);
