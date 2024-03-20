@@ -3,7 +3,13 @@ import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { addModule, deleteModule, updateModule, setModule } from "./reducer";
 import { KanbasState } from "../../store";
-import { FaEllipsisV, FaPlus } from "react-icons/fa";
+import {
+  FaCheckCircle,
+  FaEllipsisV,
+  FaPlus,
+  FaPlusCircle,
+} from "react-icons/fa";
+import { modules } from "../../Database";
 
 function ModuleList() {
   const { courseId } = useParams();
@@ -14,6 +20,8 @@ function ModuleList() {
     (state: KanbasState) => state.modulesReducer.module
   );
   const dispatch = useDispatch();
+  const modulesList = modules.filter((module) => module.course === courseId);
+  const [selectedModule, setSelectedModule] = useState(modulesList[0]);
 
   return (
     <>
@@ -67,11 +75,10 @@ function ModuleList() {
         {moduleList
           .filter((module) => module.course === courseId)
           .map((module, index) => (
-            <li key={index} className="list-group-item">
-              <span style={{ fontSize: "32px", fontWeight: "bold" }}>
+            <li key={index} className="list-group-item"
+            onClick={() => setSelectedModule(module)}>
+              <span className="list-group-item">
                 {module.name}
-              </span>
-              <span className="float-end">
                 <button
                   className="custom-button-r"
                   onClick={() => dispatch(deleteModule(module._id))}
@@ -84,9 +91,42 @@ function ModuleList() {
                 >
                   Edit
                 </button>
+                <span className="float-end">
+                  <FaCheckCircle className="text-success" />
+                  <FaPlusCircle className="ms-2" />
+                  <FaEllipsisV className="ms-2" />
+                </span>
               </span>
-              <p>{module.description}</p>
-              <p>{module._id}</p>
+
+              {selectedModule._id === module._id && (
+                <ul className="list-group">
+                  {module.lessons?.map(
+                    (lesson: {
+                      name:
+                        | string
+                        | number
+                        | boolean
+                        | React.ReactElement<
+                            any,
+                            string | React.JSXElementConstructor<any>
+                          >
+                        | Iterable<React.ReactNode>
+                        | React.ReactPortal
+                        | null
+                        | undefined;
+                    }) => (
+                      <li className="list-group-item">
+                        <FaEllipsisV className="me-2" />
+                        {lesson.name}
+                        <span className="float-end">
+                          <FaCheckCircle className="text-success" />
+                          <FaEllipsisV className="ms-2" />
+                        </span>
+                      </li>
+                    )
+                  )}
+                </ul>
+              )}
               <hr />
             </li>
           ))}
