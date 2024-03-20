@@ -72,64 +72,73 @@ function ModuleList() {
           />
         </li>
         <hr />
-        {moduleList
-          .filter((module) => module.course === courseId)
-          .map((module, index) => (
-            <li key={index} className="list-group-item"
-            onClick={() => setSelectedModule(module)}>
-              <span className="list-group-item">
-                {module.name}
-                <button
-                  className="custom-button-r"
-                  onClick={() => dispatch(deleteModule(module._id))}
-                >
-                  Delete
-                </button>
-                <button
-                  className="custom-button-g"
-                  onClick={() => dispatch(setModule(module))}
-                >
-                  Edit
-                </button>
-                <span className="float-end">
-                  <FaCheckCircle className="text-success" />
-                  <FaPlusCircle className="ms-2" />
-                  <FaEllipsisV className="ms-2" />
+        <ul className="wd-modules">
+          {moduleList
+            .filter((module) => module.course === courseId)
+            .map((module, index) => (
+              <li
+                key={index}
+                className="list-group-item"
+                onClick={() => setSelectedModule(module)}
+              >
+                <span className="list-group-item">
+                  {module.name}
+                  &nbsp;
+                  &nbsp;
+                  <button
+                    className="custom-button-r"
+                    onClick={() => dispatch(deleteModule(module._id))}
+                  >
+                    Delete
+                  </button>
+                  &nbsp;
+                  
+                  <button
+                    className="custom-button-g"
+                    onClick={() => dispatch(setModule(module))}
+                  >
+                    Edit
+                  </button>
+                  <span className="float-end">
+                    <FaCheckCircle className="text-success" />
+                    <FaPlusCircle className="ms-2" />
+                    <FaEllipsisV className="ms-2" />
+                  </span>
                 </span>
-              </span>
 
-              {selectedModule._id === module._id && (
-                <ul className="list-group">
-                  {module.lessons?.map(
-                    (lesson: {
-                      name:
-                        | string
-                        | number
-                        | boolean
-                        | React.ReactElement<
-                            any,
-                            string | React.JSXElementConstructor<any>
-                          >
-                        | Iterable<React.ReactNode>
-                        | React.ReactPortal
-                        | null
-                        | undefined;
-                    }) => (
-                      <li className="list-group-item">
-                        <FaEllipsisV className="me-2" />
-                        {lesson.name}
-                        <span className="float-end">
-                          <FaCheckCircle className="text-success" />
-                          <FaEllipsisV className="ms-2" />
-                        </span>
-                      </li>
-                    )
-                  )}
-                </ul>
-              )}
-              <hr />
-            </li>
-          ))}
+                {selectedModule._id === module._id && (
+                  <ul className="list-group">
+                    {module.lessons?.map(
+                      (lesson: {
+                        name:
+                          | string
+                          | number
+                          | boolean
+                          | React.ReactElement<
+                              any,
+                              string | React.JSXElementConstructor<any>
+                            >
+                          | Iterable<React.ReactNode>
+                          | React.ReactPortal
+                          | null
+                          | undefined;
+                      }) => (
+                        <li className="list-group-item">
+                          <FaEllipsisV className="me-2" />
+                          {lesson.name}
+                          <span className="float-end">
+                            <FaCheckCircle className="text-success" />
+                            <FaEllipsisV className="ms-2" />
+                          </span>
+                        </li>
+                      )
+                    )}
+                  </ul>
+                )}
+                <hr />
+              </li>
+            ))}
+        </ul>
       </ul>
     </>
   );
